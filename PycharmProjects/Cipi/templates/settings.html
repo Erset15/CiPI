@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro App - Настройки</title>
+  <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<!-- Подключение Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<!-- Ваши скрипты -->
+<script src="/js/auth.js"></script>
+<script src="/js/settings.js"></script>
+<body>
+  <header>
+    <div class="logo">Pomodoro App</div>
+    <nav>
+      <ul>
+        <li><a href="main.html">Главная</a></li>
+        <li><a href="tasks.html">Задачи</a></li>
+        <li><a href="stats.html">Статистика</a></li>
+        <li><a href="feedback.html">Обратная связь</a></li>
+        <li><a href="settings.html" class="active">Настройки</a></li>
+      </ul>
+    </nav>
+    <div class="user-info">
+      <span id="userEmail">user@edu.mirea.ru</span>
+      <button id="logoutBtn">Выйти</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <main class="settings-main">
+      <h1>Настройки приложения</h1>
+
+      <div class="settings-tabs">
+        <button class="tab-btn active" data-tab="appearance">Внешний вид</button>
+        <button class="tab-btn" data-tab="pomodoro">Pomodoro</button>
+        <button class="tab-btn" data-tab="data">Данные</button>
+      </div>
+
+      <div class="tab-content active" id="appearance-tab">
+        <h3>Фон приложения</h3>
+        <div class="background-options">
+          <div class="bg-option" data-bg="1">
+            <div class="bg-preview bg-1"></div>
+            <span>Вариант 1</span>
+          </div>
+          <div class="bg-option" data-bg="2">
+            <div class="bg-preview bg-2"></div>
+            <span>Вариант 2</span>
+          </div>
+          <div class="bg-option" data-bg="3">
+            <div class="bg-preview bg-3"></div>
+            <span>Вариант 3</span>
+          </div>
+          <div class="bg-option" data-bg="4">
+            <div class="bg-preview bg-4"></div>
+            <span>Вариант 4</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="customBg">Или загрузите свой фон</label>
+          <input type="file" id="customBg" accept="image/*">
+        </div>
+      </div>
+
+      <div class="tab-content" id="pomodoro-tab">
+        <h3>Настройки Pomodoro</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="workDuration">Длительность работы (мин)</label>
+            <input type="number" id="workDuration" min="1" max="60" value="25">
+          </div>
+          <div class="form-group">
+            <label for="breakDuration">Длительность перерыва (мин)</label>
+            <input type="number" id="breakDuration" min="1" max="30" value="5">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="autoStartNext" checked>
+            Автоматически начинать следующий Pomodoro
+          </label>
+        </div>
+      </div>
+
+      <div class="tab-content" id="data-tab">
+        <h3>Управление данными</h3>
+
+        <div class="data-actions">
+          <button id="exportTasks" class="btn">Выгрузить задачи</button>
+          <button id="importTasks" class="btn">Загрузить задачи</button>
+          <button id="exportSettings" class="btn">Выгрузить настройки</button>
+          <button id="importSettings" class="btn">Загрузить настройки</button>
+        </div>
+
+        <div class="form-group">
+          <label for="backupFrequency">Частота автоматического резервного копирования</label>
+          <select id="backupFrequency">
+            <option value="daily">Ежедневно</option>
+            <option value="weekly" selected>Еженедельно</option>
+            <option value="monthly">Ежемесячно</option>
+            <option value="never">Никогда</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button id="saveSettings" class="btn primary">Сохранить изменения</button>
+        <button id="resetSettings" class="btn">Сбросить настройки</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

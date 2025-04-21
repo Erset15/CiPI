@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro App - Обратная связь</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Pomodoro App</div>
+    <nav>
+      <ul>
+        <li><a href="main.html">Главная</a></li>
+        <li><a href="tasks.html">Задачи</a></li>
+        <li><a href="stats.html">Статистика</a></li>
+        <li><a href="feedback.html" class="active">Обратная связь</a></li>
+        <li><a href="settings.html">Настройки</a></li>
+      </ul>
+    </nav>
+    <div class="user-info">
+      <span id="userEmail">user@edu.mirea.ru</span>
+      <button id="logoutBtn">Выйти</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <main class="feedback-main">
+      <h1>Обратная связь</h1>
+      <p>Если у вас возникли проблемы или есть предложения по улучшению приложения, заполните форму ниже.</p>
+
+      <form id="feedbackForm">
+        <div class="form-group">
+          <label for="feedbackSubject">Тематика*</label>
+          <select id="feedbackSubject" required>
+            <option value="">Выберите тематику</option>
+            <option value="bug">Ошибка в приложении</option>
+            <option value="feature">Предложение по улучшению</option>
+            <option value="question">Вопрос по использованию</option>
+            <option value="other">Другое</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="feedbackDescription">Описание проблемы*</label>
+          <textarea id="feedbackDescription" rows="6" required placeholder="Опишите вашу проблему или предложение как можно подробнее..."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Отправить обращение</button>
+      </form>
+
+      <div id="feedbackMessage" class="message hidden"></div>
+    </main>
+
+
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="pages/feedback.js"></script>
+</body>
+</html>
+

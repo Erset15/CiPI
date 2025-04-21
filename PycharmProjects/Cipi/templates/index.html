@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro App - Вход</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .code-inputs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .code-input {
+      width: 40px;
+      height: 50px;
+      text-align: center;
+      font-size: 24px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn.secondary {
+      background-color: #f0f0f0;
+      color: #333;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <h1>Вход в Pomodoro App</h1>
+    <p>Введите ваш email для получения кода подтверждения</p>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <input type="email" id="email" placeholder="your@edu.mirea.ru" required>
+      </div>
+      <button type="submit" class="btn">Получить код</button>
+    </form>
+
+    <div id="message" class="message"></div>
+  </div>
+
+<script src="../js/auth.js"></script>
+</body>
+</html>
