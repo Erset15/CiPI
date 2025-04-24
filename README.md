@@ -1,4 +1,4 @@
-<img width="1260" alt="image" src="https://github.com/user-attachments/assets/4141d73a-66c5-40f2-bf75-583526028489" /># Pomodoro Task Planner �⏱️  
+# Pomodoro Task Planner �⏱️  
 
 🚀 **Умный планировщик задач с таймером по методике "Pomodoro"**  
 
