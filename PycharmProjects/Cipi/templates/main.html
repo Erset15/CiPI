@@ -28,19 +28,20 @@
   <div class="container">
     <main class="pomodoro-container">
       <div class="pomodoro-timer">
-        <div class="timer-display" id="timer">25:00</div>
-        <div class="timer-controls">
-          <button id="startPomodoro" class="btn">Старт</button>
-          <button id="stopPomodoro" class="btn" disabled>Стоп</button>
-          <button id="skipBreak" class="btn" disabled>Пропустить перерыв</button>
-        </div>
-        <div class="current-task">
-          <h3>Текущая задача</h3>
-          <div id="currentTaskInfo">Нет активной задачи</div>
-          <button id="extendTime" class="btn hidden">Продлить время</button>
-        </div>
+        <button id="decreaseTime" class="btn" title="Уменьшить время на 1 минуту">−</button>
+        <div id="timer" contenteditable="true">25:00</div>
+        <button id="increaseTime" class="btn" title="Увеличить время на 1 минуту">+</button>
+      </div>
+      <div class="timer-controls">
+        <button id="startPomodoro" class="btn">Старт</button>
+        <button id="stopPomodoro" class="btn btnStop" disabled>Стоп</button>
+        <button id="skipBreak" class="btn" disabled>Пропустить перерыв</button>
       </div>
     </main>
+
+<!-- Аудио элементы (скрыты) -->
+<audio id="workAudio" src="1.mp3" loop></audio>
+<audio id="breakAudio" src="2.mp3" loop></audio>
 
     <aside class="tasks-sidebar">
       <h2>Ваши задачи</h2>
@@ -60,10 +61,12 @@
     </aside>
   </div>
 
-  <script src="js/pomodoro.js"></script>
+  <script src="../js/pomodoro.js"></script>
   <script src="js/tasks.js"></script>
 
   <script src="/js/auth.js"></script>
+
+
 
 </body>
 </html>

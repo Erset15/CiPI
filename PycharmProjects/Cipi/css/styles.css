@@ -216,6 +216,15 @@ nav ul li a.active:after {
   text-align: center;
   max-width: 500px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content:center;
+  width: 100%;
+}
+#timer{
+ font-size:40px;
+ padding: 0 10px;
 }
 
 .timer-display {
