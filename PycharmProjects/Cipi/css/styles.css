@@ -84,6 +84,18 @@ nav ul li a.active:after {
   margin-right: 1rem;
 }
 
+#logoutBtn{
+ background:none;
+ border:none;
+ font-weight: bold;
+ color: white;
+ font-size:15px;
+}
+
+#logoutBtn:hover{
+ color:red;
+}
+
 /* Container Styles */
 .container {
   display: flex;
