@@ -218,3 +218,35 @@ document.addEventListener('DOMContentLoaded', function() {
     a.click();
   }
 });
+
+
+//новый код
+// Функция применения цвета меню из localStorage
+function applyMenuColor() {
+  const menuElement = document.querySelector('header');
+  if (!menuElement) return;
+
+  const settings = JSON.parse(localStorage.getItem('pomodoroSettings')) || {};
+  const bgColors = {
+    "1": "",          // системный цвет
+    "2": "#FFC0CB",   // розовый
+    "3": "#00CED1",   // лазурный
+    "4": "#C5B895"    // тёмно-бежевый
+  };
+
+  const bgValue = settings.background || "1";
+  const bgColor = bgColors[bgValue] || "";
+
+  if (bgColor === "") {
+    menuElement.style.backgroundColor = "";
+    menuElement.style.color = "";
+  } else {
+    menuElement.style.backgroundColor = bgColor;
+    menuElement.style.color = (bgValue === "4") ? "#000000" : "";
+  }
+}
+
+// Вызывайте эту функцию при загрузке каждой страницы
+document.addEventListener('DOMContentLoaded', () => {
+  applyMenuColor();
+});

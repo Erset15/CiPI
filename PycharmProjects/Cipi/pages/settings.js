@@ -1,5 +1,62 @@
 document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', () => {
+  const bgOptions = document.querySelectorAll('.bg-option');
+  const menuElement = document.querySelector('header');
 
+  const bgColors = {
+    "1": "",          // системный цвет (сброс)
+    "2": "#FFC0CB",   // розовый
+    "3": "#00CED1",   // лазурный
+    "4": "#C5B895"    // тёмно-бежевый
+  };
+
+  // Функция установки активного фона и цвета меню
+  function setActiveBg(bgValue) {
+    // Снимаем выделение со всех
+    bgOptions.forEach(opt => opt.classList.remove('selected'));
+
+    // Выделяем выбранный
+    const selectedOption = document.querySelector(`.bg-option[data-bg="${bgValue}"]`);
+    if (selectedOption) selectedOption.classList.add('selected');
+
+    // Устанавливаем цвет меню
+    if (menuElement) {
+      if (!bgColors[bgValue]) {
+        menuElement.style.backgroundColor = "";
+        menuElement.style.color = "";
+      } else {
+        menuElement.style.backgroundColor = bgColors[bgValue];
+        menuElement.style.color = (bgValue === "4") ? "#000000" : "";
+      }
+
+    }
+
+    // Сохраняем в localStorage
+    const settings = JSON.parse(localStorage.getItem('pomodoroSettings')) || {};
+    settings.background = bgValue;
+    localStorage.setItem('pomodoroSettings', JSON.stringify(settings));
+  }
+
+  // Обработчик клика по фону
+  bgOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const bgValue = option.getAttribute('data-bg');
+      setActiveBg(bgValue);
+    });
+  });
+
+  // Загрузка настроек при старте
+  function loadSettings() {
+    const settings = JSON.parse(localStorage.getItem('pomodoroSettings')) || {};
+    const bgValue = settings.background || "1";
+    setActiveBg(bgValue);
+  }
+
+  loadSettings();
+});
+
+
+  //старый код
   const tabButtons = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
 
@@ -52,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     localStorage.setItem('pomodoroSettings', JSON.stringify(settings));
-    alert('Настройки сохранены!');
+    alert('Настройки сохранены! Обновите страницу');
   }
 
   function resetSettings() {
