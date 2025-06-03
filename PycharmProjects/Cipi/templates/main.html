@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pomodoro App - Главная</title>
-  <link rel="stylesheet" href="../css/styles.css">
-
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
   <header>
     <div class="logo">Pomodoro App</div>
     <nav>
       <ul>
-        <li><a href="/main.html" class="active">Главная</a></li>
-        <li><a href="/tasks.html">Задачи</a></li>
-        <li><a href="/stats.html">Статистика</a></li>
-        <li><a href="/feedback.html">Обратная связь</a></li>
-        <li><a href="/settings.html">Настройки</a></li>
+        <li><a href="main.html" class="active">Главная</a></li>
+        <li><a href="tasks.html">Задачи</a></li>
+        <li><a href="stats.html">Статистика</a></li>
+        <li><a href="feedback.html">Обратная связь</a></li>
+        <li><a href="settings.html">Настройки</a></li>
       </ul>
     </nav>
     <div class="user-info">
@@ -39,34 +38,22 @@
       </div>
     </main>
 
-<!-- Аудио элементы (скрыты) -->
-<audio id="workAudio" src="1.mp3" loop></audio>
-<audio id="breakAudio" src="2.mp3" loop></audio>
+    <!-- Аудио элементы (скрыты) -->
+    <audio id="workAudio" src="../audio/1.mp3" loop></audio>
+    <audio id="breakAudio" src="../audio/2.mp3" loop></audio>
 
     <aside class="tasks-sidebar">
       <h2>Ваши задачи</h2>
       <div class="task-list" id="taskList">
-        <!-- Tasks will be loaded here -->
-        <div class="task-item">
-          <h4>Завершить проект</h4>
-          <p>Приоритет: 8</p>
-          <p>До: 15.06.2023 18:00</p>
-        </div>
-        <div class="task-item">
-          <h4>Подготовить презентацию</h4>
-          <p>Приоритет: 5</p>
-          <p>До: 16.06.2023 12:00</p>
-        </div>
+        <!-- Задачи из localStorage загрузятся сюда -->
       </div>
     </aside>
   </div>
 
+  <!-- Скрипты подключаем в конце body -->
   <script src="../js/pomodoro.js"></script>
-  <script src="js/tasks.js"></script>
-
-  <script src="/js/auth.js"></script>
-
-
-
+  <script src="../js/auth.js"></script>
+  <script src="../pages/tasks.js"></script>
+  <script src="../pages/main.js"></script>
 </body>
 </html>
