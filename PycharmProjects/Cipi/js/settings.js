@@ -250,3 +250,13 @@ function applyMenuColor() {
 document.addEventListener('DOMContentLoaded', () => {
   applyMenuColor();
 });
+
+
+// Создаём элемент ico
+const link = document.createElement('link');
+link.rel = 'icon';
+link.type = 'icon';
+link.href = '../icon.ico';
+
+// Добавляем в head
+document.head.appendChild(link);
